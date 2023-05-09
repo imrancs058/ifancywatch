@@ -1,0 +1,19 @@
+export default {
+  nodeEnv: process.env.NODE_ENV,
+  port: process.env.PORT || 3000,
+  payments: {},
+  db: {
+
+    uri:process.env.DB_URI || "mongodb://localhost:27017/ifancythat1",
+  },
+  tokens: { jwtSecret: process.env.JWT_SECRET || "some secret" },
+  messageService: {
+    emailAddress: process.env.MESSAGE_SERVICE_EMAIL_ADDRESS || "",
+    emailPassword: process.env.MESSAGE_SERVICE_EMAIL_PASSWORD || "",
+    emailIsSecure: process.env.MESSAGE_SERVICE_EMAIL_SECURE === "1",
+    emailHost: process.env.MESSAGE_SERVICE_EMAIL_HOST || "",
+    twilioAccountSid: process.env.MESSAGE_SERVICE_TWILIO_ACCOUNT_SID || "",
+    twilioAuthToken: process.env.MESSAGE_SERVICE_TWILIO_AUTH_TOKEN || "",
+    twilioSenderPhoneNumber: process.env.MESSAGE_SERVICE_TWILIO_SENDER_PHONE_NUMBER || "",
+  },
+}
