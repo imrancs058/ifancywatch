@@ -1,0 +1,76 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- jquery validation -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Current Brand</h3>
+          </div>
+          <form action="/category-select/getCategorySelect" method="post" enctype="multipart/form-data">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Brand</label>
+                    <select class="form-control" id="brand_id" name="brand_name">
+                      <option value="">Select Brand</option>
+                      <% for(let i=0; i<data.length;i++) {%>
+                        <option value="<%= data[i] %>"><%= data[i] %></option>
+                      <%}%>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Image</label>
+                    <input type="file" class="form-control" name="image" multiple="multiple">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="submit" value="Post">
+                  </div>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </form>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <!-- drop down -->
+          <!--/.col (left) -->
+          <!-- right column -->
+          <div class="col-md-6"></div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <div class="col-md-12">
+        <div class="card-body  ">
+          <table id="example7" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th style="width: 20%">Brand Name</th>
+<!--              <th style="width: 20%">Image Category</th>-->
+              <th style="width: 100%">Image</th>
+              <th style="width: 20%">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,92 @@
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-12">
+        <!-- jquery validation -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Collections</h3>
+          </div>
+          <form action="/collections/add-collection" method="post">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Brand</label>
+                    <select class="form-control" id="brand_id" name="brand_name">
+                      <option value="">Select Brand</option>
+                      <% for(let i=0; i<data.length;i++) {%>
+                        <option value="<%= data[i] %>"><%= data[i] %></option>
+                      <%}%>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label>Keyword</label>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="keyword" placeholder="Enter Keyword">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="submit" value="Post" class="btn btn-primary" style="width: 120px">
+                  </div>
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </form>
+    </div>
+    <!-- /.row -->
+      </div>
+      <div class="col-md-12">
+        <div class="card-body">
+          <table id="example8" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>Brand Name</th>
+              <th>Keywords</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+<div class="modal fade" id="kt_edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <form action="/image-category/update" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Edit Category</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Category" required name="name" id="editName" >
+            <input type="hidden" value="" id="editId" name="id">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
